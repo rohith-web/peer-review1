@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasamiksha - Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-left {
+            flex: 1;
+            padding: 40px;
+            background-color: #d0f7a0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-left h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .login-left input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .login-left button {
+            background-color: #ccc;
+            color: #333;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .login-left button:hover {
+            background-color: #aaa;
+        }
+        .login-left a {
+            text-decoration: none;
+            color: #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .login-right {
+            flex: 1.5;
+            background-image: url('login-background.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .back-button {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
+            display: inline-block;
+        }
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-left">
+            <a href="signup.html" class="back-button">&#8592; Back</a>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <a href="sub.html">Login</a>
+            </form>
+            <div class="login-footer">
+                <p>terms & conditions apply</p>
+            </div>
+        </div>
+
+      
+        <div class="login-right">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            alert(`Logging in with username: ${username}`);
+        
+        });
+    </script>
+
+</body>
+</html>

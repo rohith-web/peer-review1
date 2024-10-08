@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parasamiksha - Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            margin-right: 20px;
+            font-size: 1.1em;
+        }
+
+        .navbar img {
+            width: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: calc(100vh - 60px);
+        }
+
+        .left-panel {
+            width: 60%;
+            background: url('signup-background.png') no-repeat center;
+            background-size: cover;
+        }
+
+        .right-panel {
+            width: 40%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-panel .form-container {
+            width: 80%;
+            max-width: 350px;
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+        }
+
+        .sign-in-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #003c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #004d4d;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-btn {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: black;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-left: 10px;
+            width: 50px;
+        }
+
+        .navbar .nav-link {
+            text-decoration: none;
+            color: black;
+            font-size: 1.1em;
+            margin-right: 20px;
+        }
+
+        .navbar .nav-link:hover {
+            text-decoration: underline;
+        }
+        .navbar.left-panel{
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="back-btn">←</a>
+        <div>
+            <a href="new.html" class="nav-link">Home</a>
+            <a href="user.html" class="nav-link">User</a>
+            <a href="admin.html" class="nav-link">Admin</a>
+            <a href="help.html" class="nav-link">Help</a>
+        </div>
+        <div class="logo">
+            <img src="parasamiksha-logo.png" alt="Parasamiksha">
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="left-panel">
+            <img src="network-website-image-1024x585.jpg">
+        </div>
+
+        <div class="right-panel">
+            <div class="form-container">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="user1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="user1@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Passout26" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm password</label>
+                        <input type="password" id="confirm-password" placeholder="Passout26" required>
+                    </div>
+                    <button type="submit" class="sign-in-btn">Sign Up</button>
+                </form>
+                <div class="login-link">
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+       
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            console.log(`Username: ${username}, Email: ${email}, Password: ${password}`);
+
+            alert('Form submitted successfully!');
+        });
+    </script>
+
+</body>
+</html>
